@@ -9,14 +9,11 @@ public class RopesLowestCost {
         }
 
         while (minPriority.getSize() > 1){
-            try {
                 int cost = minPriority.extract_min().value + minPriority.extract_min().value;
                 totalCost += cost;
                 minPriority.insert(cost);
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-        }
+
 
         return totalCost;
     }

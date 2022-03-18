@@ -76,7 +76,7 @@ public class BinarySearchTree {
         }
     }
 
-    public Node extract_min() throws Exception {
+    public Node extract_min() throws IllegalArgumentException {
         if (this.root == null) {
             throw new IllegalArgumentException("Empty Tree");
         }
@@ -85,7 +85,7 @@ public class BinarySearchTree {
 
         if (min.parent == null){
             if(min.hasLeft()){
-                throw new Exception("Min shouldn't has a left node");
+                throw new IllegalArgumentException("Min shouldn't has a left node");
             }
 
             if(min.hasRight()){
@@ -107,7 +107,7 @@ public class BinarySearchTree {
                 min.parent.left = null;
             }
             if(min.hasLeft()){
-                throw new Exception("Min shouldn't has a left node");
+                throw new IllegalArgumentException("Min shouldn't has a left node");
             }
         }
 
